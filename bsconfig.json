@@ -1,0 +1,21 @@
+{
+  "name": "webapp-template",
+  "bs-dependencies": [],
+  "bsc-flags": ["-bs-super-errors"],
+  "namespace": true,
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "reason": {
+    "react-jsx": 3
+  },
+  "refmt": 3,
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "suffix": ".bs.js"
+}
