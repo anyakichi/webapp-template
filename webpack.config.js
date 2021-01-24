@@ -1,6 +1,7 @@
 const path = require("path");
 
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -19,6 +20,16 @@ module.exports = (_, { mode }) => {
           test: /\.css$/,
           use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
+        {
+          test: /\.[jt]sx?$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "ts-loader",
+            options: {
+              transpileOnly: true,
+            },
+          },
+        },
       ],
     },
     optimization: {
@@ -35,6 +46,7 @@ module.exports = (_, { mode }) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
+      new ForkTsCheckerWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: "./src/index.html",
       }),
@@ -43,5 +55,8 @@ module.exports = (_, { mode }) => {
         chunkFilename: devMode ? "[id].css" : "[id].[contenthash].css",
       }),
     ],
+    resolve: {
+      extensions: [".mjs", ".js", ".ts", ".tsx", ".json"],
+    },
   };
 };

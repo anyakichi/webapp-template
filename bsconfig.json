@@ -17,5 +17,13 @@
     "dir": "src",
     "subdirs": true
   },
-  "suffix": ".bs.js"
+  "suffix": ".bs.js",
+  "gentypeconfig": {
+    "language": "typescript",
+    "shims": {},
+    "debug": {
+      "all": false,
+      "basic": false
+    }
+  }
 }
