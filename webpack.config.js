@@ -4,6 +4,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (_, { mode }) => {
@@ -14,6 +15,9 @@ module.exports = (_, { mode }) => {
     devServer: {
       hot: true,
     },
+    entry: {
+      main: "./src/index.tsx",
+    },
     module: {
       rules: [
         {
@@ -23,12 +27,20 @@ module.exports = (_, { mode }) => {
         {
           test: /\.[jt]sx?$/,
           exclude: /node_modules/,
-          use: {
-            loader: "ts-loader",
-            options: {
-              transpileOnly: true,
+          use: [
+            devMode && {
+              loader: "babel-loader",
+              options: {
+                plugins: ["react-refresh/babel"],
+              },
             },
-          },
+            {
+              loader: "ts-loader",
+              options: {
+                transpileOnly: true,
+              },
+            },
+          ].filter(Boolean),
         },
       ],
     },
@@ -54,7 +66,8 @@ module.exports = (_, { mode }) => {
         filename: devMode ? "[name].css" : "[name].[contenthash].css",
         chunkFilename: devMode ? "[id].css" : "[id].[contenthash].css",
       }),
-    ],
+      devMode && new ReactRefreshWebpackPlugin(),
+    ].filter(Boolean),
     resolve: {
       extensions: [".mjs", ".js", ".ts", ".tsx", ".json"],
     },

@@ -1,6 +1,6 @@
 {
   "name": "webapp-template",
-  "bs-dependencies": [],
+  "bs-dependencies": ["reason-react"],
   "bsc-flags": ["-bs-super-errors"],
   "namespace": true,
   "package-specs": [
