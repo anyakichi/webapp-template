@@ -1,0 +1,9 @@
+{
+  "name": "webapp-template",
+  "version": "1.0.0",
+  "description": "Web Application Template",
+  "repository": "https://github.com/anyakichi/webapp-template",
+  "author": "INAJIMA Daisuke <inajima@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
