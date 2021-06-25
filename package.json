@@ -8,12 +8,11 @@
   "private": true,
   "scripts": {
     "build": "bsb -make-world -clean-world && webpack --mode production",
-    "fmt": "prettier -w .",
+    "fmt": "prettier -w . && find src -regextype posix-extended -regex '.*\\.(ml|res?)i?' | xargs bsrefmt --in-place",
+    "lint": "tsc --noEmit && prettier -c .",
     "re:build": "bsb -make-world -clean-world",
     "re:watch": "bsb -make-world -clean-world -w",
-    "start": "webpack serve --mode development & bsb -make-world -clean-world -w",
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "tsc --noEmit --watch"
+    "start": "webpack serve --mode development & bsb -make-world -clean-world -w"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
