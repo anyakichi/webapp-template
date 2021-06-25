@@ -13,7 +13,9 @@ module.exports = (_, { mode }) => {
   return {
     devtool: devMode ? "eval-cheap-module-source-map" : "source-map",
     devServer: {
+      host: "0.0.0.0",
       hot: true,
+      useLocalIp: true,
     },
     entry: {
       main: "./src/index.tsx",
