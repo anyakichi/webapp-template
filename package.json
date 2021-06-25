@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "build": "bsb -make-world -clean-world && webpack --mode production",
+    "fmt": "prettier -w .",
     "re:build": "bsb -make-world -clean-world",
     "re:watch": "bsb -make-world -clean-world -w",
     "start": "webpack serve --mode development & bsb -make-world -clean-world -w",
@@ -30,6 +31,7 @@
     "mini-css-extract-plugin": "^1.3.4",
     "postcss": "^8.2.5",
     "postcss-loader": "^5.0.0",
+    "prettier": "^2.3.1",
     "react-refresh": "^0.9.0",
     "ts-loader": "^8.0.14",
     "typescript": "^4.1.3",
