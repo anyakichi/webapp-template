@@ -7,10 +7,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "bsb -make-world -clean-world && webpack --mode production",
     "re:build": "bsb -make-world -clean-world",
     "re:watch": "bsb -make-world -clean-world -w",
-    "start": "webpack serve --mode development",
+    "start": "webpack serve --mode development & bsb -make-world -clean-world -w",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch"
   },

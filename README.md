@@ -8,18 +8,14 @@ complex.
 The sample program is written in ReScript and TypeScript for explanation,
 but you can use only one of them.
 
-
 ## Production mode
 
 ```
-$ yarn re:build
 $ yarn build
 ```
-
 
 ## Development mode
 
 ```
-$ yarn re:watch
 $ yarn start
 ```
