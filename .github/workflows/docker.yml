@@ -9,6 +9,8 @@ jobs:
         id: meta
         with:
           images: anyakichi/webapp-template
+          flavor: |
+            latest=true
       - if: github.ref == 'refs/heads/main'
         uses: docker/login-action@v1
         with:
