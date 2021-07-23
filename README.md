@@ -28,7 +28,7 @@ Build and run from a container.
 
 ```
 $ mkdir webapp-template-1 && cd $_
-$ din anyakichi/webapp-template-builder
+$ din anyakichi/webapp-template
 builder@webapp-template-1:/build$ extract
 builder@webapp-template-1:/build$ build
 builder@webapp-template-1:/build$ run
@@ -37,7 +37,16 @@ builder@webapp-template-1:/build$ run
 Or from your host machine.
 
 ```
-$ din anyakichi/webapp-template-builder extract
-$ din anyakichi/webapp-template-builder build
-$ din anyakichi/webapp-template-builder run
+$ din anyakichi/webapp-template extract
+$ din anyakichi/webapp-template build
+$ din anyakichi/webapp-template run
+```
+
+## Preview with Docker
+
+Preview contents with the pre-built image. Python's http.server is used
+as a web server and don't use it in production environment.
+
+```
+$ docker run --rm -it -p 8080:8080 anyakichi/webapp-template run -y
 ```
