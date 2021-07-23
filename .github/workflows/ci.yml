@@ -1,9 +1,9 @@
-name: lint
+name: CI
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: anyakichi/webapp-template-builder
+    container: anyakichi/webapp-template
     steps:
       - uses: actions/checkout@v2
       - run: yarn install
