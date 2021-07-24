@@ -16,7 +16,7 @@ RUN chown -R builder:builder /build
 
 USER builder
 RUN \
-  (cd /build && yarn install && yarn build) \
+  (cd /build && yarn install && yarn build && yarn cache clean) \
   && mv /build/dist /home/builder/dist
 
 USER root
