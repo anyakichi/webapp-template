@@ -3,7 +3,7 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: anyakichi/webapp-template
+    container: ghcr.io/anyakichi/webapp-template:main
     steps:
       - uses: actions/checkout@v2
       - run: yarn install
