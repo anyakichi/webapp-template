@@ -15,7 +15,6 @@ module.exports = (_, { mode }) => {
     devServer: {
       host: "0.0.0.0",
       hot: true,
-      useLocalIp: true,
     },
     entry: {
       main: "./src/index.tsx",
