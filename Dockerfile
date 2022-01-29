@@ -1,11 +1,8 @@
 FROM anyakichi/yarn-builder:lts AS builder
 
 COPY \
-  bsconfig.json \
-  package.json \
-  postcss.config.js \
-  tsconfig.json \
-  webpack.config.js \
+  *.config.js \
+  *.json \
   yarn.lock \
   /build/
 COPY src /build/src/
