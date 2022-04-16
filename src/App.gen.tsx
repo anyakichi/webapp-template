@@ -1,4 +1,4 @@
-/* TypeScript file generated from App.re by genType. */
+/* TypeScript file generated from App.res by genType. */
 /* eslint-disable import/first */
 
 
