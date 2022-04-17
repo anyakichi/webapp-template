@@ -1,6 +1,11 @@
 {
   "name": "webapp-template",
-  "bs-dependencies": ["@rescript/react"],
+  "bs-dependencies": [
+    "@glennsl/rescript-jest",
+    "@rescript/react",
+    "rescript-dom-testing-library",
+    "rescript-react-testing-library"
+  ],
   "bsc-flags": ["-bs-super-errors"],
   "namespace": true,
   "package-specs": [
@@ -13,14 +18,21 @@
     "react-jsx": 3
   },
   "refmt": 3,
-  "sources": {
-    "dir": "src",
-    "subdirs": true
-  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "tests",
+      "type": "dev"
+    }
+  ],
   "suffix": ".bs.js",
   "gentypeconfig": {
     "language": "typescript",
     "shims": {},
+    "module": "es6",
     "debug": {
       "all": false,
       "basic": false
