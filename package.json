@@ -10,6 +10,7 @@
     "build": "rescript && webpack --mode production",
     "fmt": "prettier -w . && rescript format -all",
     "lint": "tsc --noEmit && prettier -c .",
+    "test": "jest --coverage",
     "re:build": "rescript",
     "re:watch": "rescript build -w",
     "start": "webpack serve --mode development & rescript build -w"
