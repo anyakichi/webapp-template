@@ -6,6 +6,7 @@ COPY \
   yarn.lock \
   /build/
 COPY src /build/src/
+COPY tests /build/tests/
 RUN chown -R builder:builder /build
 
 WORKDIR /build
